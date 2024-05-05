@@ -12,14 +12,14 @@ func Eval(w io.Writer, args ...string) error {
 	if args[0] == "help" && len(args) == 1 {
 		return Help()
 	}
-	if args[0] == "echo" && len(args) == 2 {
-		return Echo(args[2])
+	if args[0] == "echo" && len(args) >= 2 {
+		return Echo(args[1])
 	}
 	if args[0] == "cd" {
 		return ChangeDirectory()
 	}
 	if args[0] == "env" {
-		return EnvironmentVariables(w, args[1])
+		return EnvironmentVariables(w, args[0])
 	}
 	if args[0] == "times" {
 		return Times()
