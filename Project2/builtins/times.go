@@ -1,13 +1,11 @@
 package builtins
 
 import (
-	"time"
 	"fmt"
+	"time"
 )
 
-
-
 func Times(args ...string) error {
-	fmt.Println(""+time.Now().String());
-	return fmt.Errorf("");
+	fmt.Println("The time is: " + time.Now().String())
+	return fmt.Errorf(" ")
 }
